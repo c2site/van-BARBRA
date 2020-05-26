@@ -88,8 +88,16 @@ textarea{
 	align-items: center;
 	margin-top: 17px;
 }
+.header .second-menu{
+	display: none;
+}
 .header .header-right .menu-item{
 	margin-left:18px;
+}
+.header .header-right .menu-item{
+	height: 100%;
+	width: 100%;
+	display: block;
 }
 .header .header-right .menu-item.price{
 	font-size: 12px;
@@ -105,7 +113,6 @@ textarea{
 	height: 430px;
 	background: #e8e8e8;
 	position: relative;
-	font-family: 'Gotham Pro bold', sans-serif;
 }
 .footer .wrap{
 	padding:65px 0 0 115px;
@@ -133,6 +140,7 @@ textarea{
 .footer .wrap .footer-top .footer-left ul h4{
 	font-size: 16px;
 	font-weight: bold;
+	font-family: 'Gotham Pro bold', sans-serif;
 }
 .footer .wrap .footer-top .footer-left ul:first-child{
 	margin-right: 130px;
@@ -262,7 +270,11 @@ textarea{
 	font-size: 12px;
 }
 /*contact*/
-.section.contact form{
+.section.contact{
+	padding-bottom: 45px;
+	margin-bottom: 0;
+}
+.section.contact form, .section.create form{
 	display: flex;
 	flex-direction: column;
 }
@@ -273,7 +285,7 @@ textarea{
 .section.contact form .fir-stage input[type="text"]:nth-child(2), .section.contact form .fir-stage input:first-child{
 	width: 49%;
 }
-.section.contact form input[type="text"]{
+.section.contact form input[type="text"], .section.login form input[type="text"], .section.create form input[type="text"]{
 	height: 30px;
 	line-height: 30px;
 	margin-bottom: 10px;
@@ -308,12 +320,111 @@ textarea{
 }
 .section.contact h4{
 	font-size:16px;
-	font-weight: normal;
 }
-.section.contact p:first-child{
-	margin-bottom: 10px;
+.section.contact .contact-top{
+	font-family: 'GothamPro-Bold', sans-serif;
 }
 .section.contact p{
-	margin-bottom: 0;
-	
+	margin-bottom: 35px;
+	font-size: 12px;
+}
+.section.contact input[type="submit"]{
+	margin-bottom: 30px;
+}
+/*login*/
+.section.login .wrap, .section.create .wrap{
+	width: 225px;
+}
+.section.login form{
+	display: flex;
+	flex-direction: column;
+}
+.section.login h2, .section.create h2{
+	margin-bottom: 20px;
+}
+.section.login .robot{
+	text-align: center;
+	height:20px;
+	width: 165px;
+	background:#fbede0; 
+	border:1px solid #131313;
+	margin: 5px auto 25px auto;
+	line-height: 20px;
+	padding: 0 5px;
+}
+.section.login input[type="submit"], .section.create input[type="submit"]{
+	background: #d9d9d9;
+	border: 1px solid #131313;
+	height: 35px;
+	line-height: 35px;
+	margin-bottom: 80px;
+	cursor: pointer;
+}
+.section.login input[type="text"]:focus, .section.create input[type="text"]:focus{
+	border:1px solid #131313;
+}
+.section.login .login-bottom, .section.login .login-bottom a{
+	text-align: center;
+	font-size: 12px;
+	color: #1e1e1e;
+}
+.section.login .login-bottom a{
+	text-decoration-color: #d6d6d6;
+}
+.section.login .forgot a{
+	font-size: 10px;
+	color: #8e8e8e;
+	text-decoration: none;
+}
+.section.login .forgot{
+	margin-bottom: 10px;
+}
+.product-slider .product-item, .product-slider .product-item img{
+	max-width: 130px;
+	max-height: 160px;
+}
+.section.product{
+	font-size: 12px;
+	font-style: italic;
+}
+/*contact*/
+.section.create input[type="checkbox"]{
+	display: none;
+}
+.section.create label::before{
+	content: '';
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: #fff;
+	border-top: 1px solid #131313;
+	border-bottom: 1px solid #131313;
+	border-left: 1px solid #585858;
+	border-right: 1px solid #585858;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -8px;
+}
+.section.create label{
+	position: relative;
+	padding-left: 20px;
+	font-size: 10px;
+	color: #969696;
+	margin-bottom: 10px;
+}
+input[type="checkbox"]:checked + label:before{
+	background-image: url(img/tick.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.section.create input[type="submit"]{
+	margin-bottom: 40px;
+}
+.section.create .create-bottom{
+	text-align: center;
+	font-size: 12px;
+}
+.section.create .create-bottom a{
+	color: #000;
 }

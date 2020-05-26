@@ -13,4 +13,10 @@ $(document).ready(function () {
   		autoplay: true,
   		autoplaySpeed: 2000,
 	});
+	$('.product-slider').slick({
+		arrows:false,
+		slidesToShow: 5,
+  		slidesToScroll: 1,
+  		centerMode: true,
+	});
 });
