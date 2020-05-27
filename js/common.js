@@ -17,6 +17,6 @@ $(document).ready(function () {
 		arrows:false,
 		slidesToShow: 5,
   		slidesToScroll: 1,
-  		centerMode: true,
+  		vertical: true
 	});
 });
