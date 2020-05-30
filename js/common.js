@@ -15,8 +15,18 @@ $(document).ready(function () {
 	});
 	$('.product-slider').slick({
 		arrows:false,
-		slidesToShow: 5,
+		slidesToShow: 4,
+  		slidesToScroll: 4,
+  		vertical: true,
+  		verticalSwiping: true,
+  		asNavFor: '.product-center',
+  		focusOnSelect: true
+	});
+	$('.product-center').slick({
+		arrows:false,
+		slidesToShow: 1,
   		slidesToScroll: 1,
-  		vertical: true
+  		asNavFor: '.product-slider',
+
 	});
 });

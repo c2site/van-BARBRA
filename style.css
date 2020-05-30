@@ -26,6 +26,7 @@
 	margin: 0;
 	padding: 0;
 	outline: none;
+	font-family: Gotham Pro;
 }
 a:hover{
 	opacity: 0.5;
@@ -57,6 +58,9 @@ textarea{
 }
 .header .header-bottom{
 	margin-bottom: 35px;
+	font-family: 'Gotham Pro bold', sans-serif;
+}
+.header .header-bottom ul li a{
 	font-family: 'Gotham Pro bold', sans-serif;
 }
 .header img[src="img/logo.png"]{
@@ -196,6 +200,8 @@ textarea{
 	line-height: 45px;
 	padding: 0 15px;
 	font-weight: bold;
+	color: #000;
+	position: relative;
 }
 .footer-right ul{
 	list-style: none;
@@ -235,12 +241,20 @@ textarea{
 .slick-slide{
 	outline: none;
 }
+
 .arrivals-slider{
 	position: relative;
 }
 .arrivals-slider .arrivals-slide{
 	margin:0 6px;
-	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+.arrivals-slider .arrivals-slide .arrival-info{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 5px;
+	font-size: 12px
 }
 .arrivals-slider .arrivals-slide img{
 	height: 100%;
@@ -460,15 +474,29 @@ textarea{
 	margin-bottom: 10px;
 }
 /* product*/
-.product-slider .product-item, .product-slider .product-item img{
-	max-width: 130px;
-	max-height: 160px;
+.section.product .product-center{
+	width: 420px;
+	height: 650px;
+	margin-left: 65px;
+}
+.section.product .product-slider{
+	height: 650px;
+	width: 127px;
+}
+.section.product .product-slider img{
+	width: 100%;
+	height: auto;
 }
 .section.product{
 	font-size: 12px;
+	margin-bottom: 140px;
 }
 .section.product .product-left{
 	width: 60%;
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 50px;
+	margin-left: 83px;
 }
 .section.product .product-right{
 	width:35%;
@@ -564,6 +592,92 @@ input[type="checkbox"]:checked + label:before{
 /*bag*/
 .section.bag h2{
 	margin-bottom: 25px;
+}
+.section.bag .bag-top{
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 35px;
+	border-bottom: 1px solid #c6c6c6;
+	font-family: 'Gotham Pro bold', sans-serif;
+}
+.section.bag .bag-top .bag-right-top span:last-child{
+	margin-left: 182px;
+}
+.section.bag .bag-top .bag-right-top span:nth-child(2){
+		margin-left: 105px;
+}
+.section.bag .bag-item{
+	display: flex;
+	align-items: center;
+	height: 150px;
+	border-bottom: 1px solid #c6c6c6
+}
+.section.bag .bag-item ul, .section.bag .bag-items {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+}
+.section.bag .bag-items li img{
+	width: 70px;
+	height: auto; 
+	margin-right: 40px;
+}
+.section.bag .bag-items li.size span::before{
+	content: '';
+	display: block;
+	background: url(img/grey-arrow.png);
+	position: absolute;
+	height: 5px;
+	width: 9px;
+	right: -15px;
+	top: 50%;
+	margin-top: -2px;
+}
+.section.bag .bag-items li.size span{
+	position: relative;
+	color: #7f7f7f;
+	position: relative;
+}
+.section.bag .bag-items .info-item li span{
+	font-size: 14px;
+}
+.section.bag .bag-items .info-item .name-item span{
+	font-size: 16px;
+}
+.section.bag .info-item .color{
+	color: #7f7f7f;
+}
+.section.bag .bag-items li.size:hover .size-min{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	background: #fff;
+	width: 100%;
+	color: #7f7f7f;
+	cursor: pointer;
+	width: 100px;
+}
+.section.bag .bag-items li.size .size-min{
+	display: none;
+}
+.section.bag .bag-items .info-item .remove{
+	margin-top: 15px;
+	color: #f89e9e;
+	text-decoration: underline #fde7e7;
+}
+.section.bag .bag-item{
+	display: flex;
+	justify-content: space-between;
+}
+.section.bag .bag-item .left-info, .right-info{
+	display: flex;
+	align-items: center;
+}
+.section.bag .bag-item #spinner{
+	height: 45px;
+	width: 60px;
+	margin-right: 170px;
+	margin-left: 110px;
 }
 /*gift*/
 .section.gift .gift-content{
@@ -1025,6 +1139,11 @@ input[type="checkbox"]:checked + label:before{
 .section.swimwear .catalog .product-card{
  	position: relative;
 }
+.section.swimwear .catalog .product-card .sale{
+	position: absolute;
+	top: 0;
+	z-index: 4;
+}
 .section.swimwear .product-card .heart{
 	position: absolute;
 	top: 10px;
@@ -1039,6 +1158,7 @@ input[type="checkbox"]:checked + label:before{
 .section.swimwear .product-card .product-info{
 	display: flex;
 	justify-content: space-between;
+	font-size: 12px;
 }
 .section.swimwear .product-card .quick-add{
 	display: none;
