@@ -679,6 +679,14 @@ input[type="checkbox"]:checked + label:before{
 	margin-right: 170px;
 	margin-left: 110px;
 }
+.section.bag .statistics{
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+}
+.section.bag .statistics .price{
+	margin-left: 45px;
+}
 /*gift*/
 .section.gift .gift-content{
 	display: flex;
