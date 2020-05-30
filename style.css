@@ -41,6 +41,9 @@ textarea{
 	font-style: italic;
 	font-size: 12px;
 }
+.on-border{
+	position: absolute;
+}
 /*header*/
 .header{
 	height: 160px;
@@ -138,6 +141,11 @@ textarea{
 	flex-direction: column;
 	font-size: 10px;
 	color: #a3a3a3;
+}
+.header .header-right .basket-menu a{
+	font-size: 10px;
+	color: #a3a3a3;
+	text-decoration: none;
 }
 /*footer*/
 .footer{
@@ -277,7 +285,10 @@ textarea{
 	font-size: 24px;
 	text-align:center;
 }
-.section.food .wrap p{
+.section.food .wrap div p{
+	text-align: center;
+}
+.section.food .wrap .paragraph{
 	width: 100%;
 }
 .section.about h3{
@@ -299,6 +310,44 @@ textarea{
 }
 .section.about ul p{
 	font-size: 12px;
+}
+.section.about ul li img{
+	max-height: 90px;
+	max-width: 90px;
+}
+.section.hashtags{
+	text-align: center;
+	font-size: 24px;
+}
+.section.hashtags p{
+	width: 340px;
+	margin: 0 auto;
+}
+.section.gallery-section .gallery{
+	padding:0;
+	margin: 0;
+	list-style: none;
+	display: flex;
+	flex-direction:column;
+	flex-wrap: wrap;
+	max-height: 463px;
+	width: 100%;
+	justify-content: flex-start;
+	align-content: flex-start;
+}
+.section.gallery-section .gallery li{
+	height: 227px;
+	width: 226px;
+}
+.section.gallery-section .gallery li:first-child{
+	width: 463px;
+	height: 463px;
+}
+.section.gallery-section .gallery li:nth-child(2n){
+	margin-bottom: 9px;
+}
+.section.gallery-section .gallery li:nth-child(2n+1){
+	margin-right: 9px;
 }
 /*contact*/
 .section.contact{
@@ -428,16 +477,16 @@ textarea{
 	display: flex;
 	justify-content: space-between;
 }
-.section.product .old-price{
+span.old-price{
 	color: #a3a3a3;
 	text-decoration: line-through;
 }
-.section.product .discount{
+span.discount{
 	display: inline-block;
 	border-left: 1px solid #000;
 	padding-left: 5px;
 }
-.section.product .new-price{
+span.new-price{
 	color: #f13535;
 }
 .section.product .product-price{
@@ -472,7 +521,7 @@ textarea{
 	margin-bottom: 50px;
 }
 /*create*/
-.section.create input[type="checkbox"]{
+input[type="checkbox"]{
 	display: none;
 }
 .section.create label::before{
@@ -598,6 +647,7 @@ input[type="checkbox"]:checked + label:before{
 	list-style: none;
 	width: 100%;
 	justify-content: center;
+	margin-bottom: 10px;
 }
 .section.wishlist ul.icons li{
 	margin: 0 10px;
@@ -612,6 +662,9 @@ input[type="checkbox"]:checked + label:before{
 }
 .section.wishlist .wishlist-list li{
 	margin-right: 10px;
+}
+.section.wishlist .wishlist-list li:nth-child(4n){
+	margin-right: 0;
 }
 .section.wishlist .wishlist-list .product-card .product-name{
 	font-size: 12px;
@@ -653,7 +706,28 @@ input[type="checkbox"]:checked + label:before{
 	margin: 0 auto;
 	display: none;
 }
-.section.wishlist .wishlist-list .product-card:hover .add{
+.section.wishlist .select-menu select{
+	border: 0;
+	height: 20px;
+	outline: none;
+	background: #fff;
+	font-size: 12px;
+	appearance: none;
+}
+.section.wishlist .close{
+	position: absolute;
+	top:0;
+	right: 0;
+	background: #fff;
+	height: 17px;
+	width: 17px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 17px;
+	display: none;
+	cursor: pointer;
+}
+.section.wishlist .wishlist-list .product-card:hover .add, .section.wishlist .product-card:hover .close{
 	display: block;
 }
 /*paypal*/
@@ -684,6 +758,9 @@ input[type="checkbox"]:checked + label:before{
 	font-size: 16px;
 	margin-bottom: 25px;
 }
+.section.paypal .paypal-form h3.paypal-log{
+	margin-bottom: 15px;
+}
 .section.paypal .paypal-form .form-bottom{
 	display: flex;
 	justify-content: space-between;
@@ -708,4 +785,353 @@ input[type="checkbox"]:checked + label:before{
 .section.paypal .paypal-form .form-bottom .return img{
 	position: absolute;
 	left: 0;
+}
+.section.paypal .paypal-left label{
+	position: relative;
+	padding-left: 24px;
+	font-size: 12px;
+	margin-bottom: 0px;
+}
+.section.paypal input[type="checkbox"]:checked + label:before{
+	background: url(img/white-tick.png) #000;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.section.paypal .contact-inform  label::before{	
+	content: '';
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: #fff;
+	border-top: 1px solid #131313;
+	border-bottom: 1px solid #131313;
+	border-left: 1px solid #585858;
+	border-right: 1px solid #585858;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -8px;
+}
+.section.paypal .contact-inform label::before{
+	margin-top: -10px;
+}
+.contact-inform .paypal-contact-top{
+	display: flex;
+	justify-content: space-between;
+}
+.contact-inform .paypal-contact-top .paypal-login{
+	color: #7f7f7f;
+}
+.contact-inform .paypal-contact-top .paypal-login a{
+	color: #7f7f7f;
+	text-decoration: none;
+}
+.contact-inform{
+	margin-bottom: 40px;
+	border-top: 1px solid #c6c6c6;
+	padding-top: 45px;
+	position: relative;
+}
+.section.paypal .contact-inform .on-border{
+	font-size: 12px;
+	color: #7f7f7f;
+	background: #fff;
+	top: -7px;
+	display: block;
+	padding: 0 6px;
+	left: 50%;
+	margin-left: -20px;
+}
+.section.paypal .paypal-checkout{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 0;
+	border: 1px solid #c6c6c6;
+	border-radius: 10px;
+	margin: 30px 0;
+	position: relative;
+}
+.section.paypal .paypal-checkout .paypal-background{
+	padding: 10px 62px;
+	background: #ffc337;
+	border-radius: 5px;
+}
+.section.paypal .paypal-checkout .on-border{
+	font-size: 12px;
+	background: #fff;
+	top: -7px;
+	display: block;
+	padding: 0 6px;
+	left: 50%;
+	margin-left: -50px;
+}
+.section.paypal .paypal-all{
+	display: flex;
+	justify-content: space-between;
+}
+.section.paypal .paypal-all .paypal-right{
+	width: 43%
+}
+.section.paypal .paypal-all .paypal-left{
+	width: 50%;
+}
+.section.paypal .paypal-right .shopping-item img{
+	max-height: 105px;
+	max-width: 70px;
+}
+.section.paypal .paypal-right .shopping-item .img{
+	position: relative;
+	display: inline-block;
+}
+.section.paypal .paypal-right .shopping-item .amount{
+	border-radius: 50%;
+	width: 18px;
+	height: 18px;
+	background: #898989;
+	text-align: center;
+	color: #f7f7f7;
+	font-size: 10px;
+	line-height: 18px;
+	position: absolute;
+	top: -4px;
+	right:-5px;
+}
+.section.paypal .paypal-right .shopping-list{
+	list-style: none;
+	margin-bottom: 30px;
+}
+.section.paypal .paypal-right .shopping-list li{
+	margin-bottom: 18px;
+}
+.section.paypal .shopping-list .shopping-item{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.section.paypal .shopping-list .shopping-item .item-info{
+	display: flex;
+	flex-direction: column;
+	margin-left: 40px;
+}
+.section.paypal .shopping-list .shopping-item .size{
+	font-size: 14px;
+	color: #7f7f7f;
+}
+.section.paypal .shopping-item .shopping-list-left{
+	display: flex;
+	align-items: center;
+}
+.section.paypal .gift-card input[type="text"]{
+	width: 75%;
+	height: 45px;
+	border: 1px solid #c6c6c6;
+	border-radius: 5px;
+	line-height: 45px;
+	color: #7f7f7f;
+	font-size: 12px;
+}
+.section.paypal .gift-card input[type="submit"]{
+	height: 45px;
+	background: #c6c6c6;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 14px;
+	border: 0;
+	width: 22%;
+}
+.section.paypal .gift-card form{
+	display: flex;
+	justify-content: space-between;
+}
+.section.paypal textarea[name="message"]{
+	height: 150px;
+	width: 100%; 
+	border: 1px solid #c6c6c6;
+	border-radius: 10px;
+	margin-top: 5px;
+	padding: 10px;
+	margin-bottom: 25px;
+}
+.section.paypal .message-form{
+	display: flex;
+	flex-direction: column;
+	margin-top: 100px;
+}
+.section.paypal label[for="message"]{
+	font-size: 12px;
+}
+.section.paypal .paypal-right p{
+	font-size: 12px;
+}
+.section.paypal .total{
+	display: flex;
+	flex-direction: column;
+	display: flex;
+	border-top: 1px solid #c6c6c6; 
+	padding-top: 20px;
+}
+.section.paypal .total .layer{
+	display: flex;
+	justify-content: space-between;
+}
+.section.paypal .total .layer:first-child{
+	margin-bottom: 15px;
+}
+.section.paypal .total .layer:nth-child(3){
+	margin-top: 55px;
+	font-size: 14px;
+}
+.section.paypal .total .layer:nth-child(3) span:first-child{
+	font-size: 24px;
+}
+.section.paypal .total .layer:nth-child(3) span:last-child{
+	font-size: 30px;
+}
+.section.paypal .total .layer:nth-child(3) p{
+	font-size: 14px;
+	line-height: 100%;
+}
+.header.paypal-head img[src="img/logo.png"]{
+	position: absolute;
+	left: 25%;
+	margin-left: -85px;
+}
+/*paypal-login*/
+.section.paypal .account{
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+.section.paypal .acc-info{
+	display: flex;
+	flex-direction: column;
+	margin-left: 10px;
+}
+.section.paypal .acc-info a{
+	color: #000;
+	text-decoration:none;
+	font-size: 12px;
+}
+/*swimwear*/
+.section.swimwear .catalog{
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+}
+.section.swimwear h2{
+	font-size: 24px;
+}
+.section.swimwear .catalog .product-card{
+ 	position: relative;
+}
+.section.swimwear .product-card .heart{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	display: none;
+	cursor: pointer;
+	z-index: 4;
+}
+.section.swimwear .product-card:hover .heart{
+	display: block;
+}
+.section.swimwear .product-card .product-info{
+	display: flex;
+	justify-content: space-between;
+}
+.section.swimwear .product-card .quick-add{
+	display: none;
+}
+.section.swimwear .catalog li:hover .quick-add{
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	bottom: 10px;
+	background: rgb(255,255,255,0.8);
+	height: 17px;
+	line-height: 17px;
+	left: 6px;
+	width: 95%;
+	padding: 0 6px;
+	font-size: 10px;
+}
+.section.swimwear .product-card .quick-add input[type="radio"]{
+	appearance:none;
+	-webkit-appearance: none;
+}
+.section.swimwear .product-card .quick-add input:checked + label{
+	border: 1px solid black;
+	line-height: 13px;
+	height: 13px;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.section.swimwear .product-card .quick-add label:hover{
+	color: #737373;
+	cursor: pointer;
+}
+.section.swimwear .product-card .quick-add label{
+	margin-left: 5px;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	height: 100%;
+}
+.section.swimwear .product-card .quick-add div:last-child{
+	display: flex;
+}
+.section.swimwear .product-card .image{
+	position: relative;
+}
+.section.swimwear .catalog-menu{
+	position: absolute;
+	display: flex;
+	list-style: none;
+	top: -20px;
+	right: 0;
+}
+.section.swimwear .catalog-menu li{
+	position: relative;
+}
+.section.swimwear .catalog-menu li:last-child{
+	margin-left: 65px;
+}
+.section.swimwear .catalog-menu li:nth-child(2){
+	margin-left: 45px;
+}
+.section.swimwear .catalog-menu li img:last-child{
+	position: absolute;
+	top: 50%;
+	right: -9px;
+}
+.section.swimwear .catalog-menu .fir:first-child img:first-child{
+	position: absolute;
+	top: 3px;
+	left: -24px;
+}
+.section.swimwear .all-catalog{
+	position: relative;
+}
+.section.swimwear .catalog-menu .min-menu{
+	list-style: none;
+	display: none;
+}
+.section.swimwear .catalog-menu li:hover .min-menu{
+	display:flex;
+	flex-direction: column;
+	position: absolute;
+	z-index: 4;
+	background: #fff;
+	width: 100%;
+}
+.section.swimwear .catalog-menu .min-menu li{
+	margin: 0;
+}
+.section.swimwear li{
+	margin-right: 9px;
+}
+.section.swimwear .catalog li:nth-child(4n){
+	margin-right: 0;
 }
