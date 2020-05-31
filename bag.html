@@ -163,16 +163,23 @@
 					</li>
 				</ul>
 			</div>
-			<div class="statistics">
-				<div class="layer"><span>Subtotal:</span><span class="price">$139.60</span></div>
-				<div class="layer"><input type="text" placeholder="Discount Code"><span class="price">$00.00</span></div>
-				<div class="layer"><span>TOTAL:</span><span class="price">$139.60</span></div>
-				<p>Shipping and Tax calculated at Checkout
-				</p>
+			<div class="stats-all">
+				<div class="statistics">
+					<div class="layer"><span>Subtotal:</span><span class="price">$139.60</span></div>
+					<div class="layer"><button>Discount Code</button><span class="price">$00.00</span></div>
+					<div class="layer"><span>TOTAL:</span><span class="price">$139.60</span></div>
+					<p>Shipping and Tax calculated at Checkout
+					</p>
+					<div class="stats-bottom">
+						<input type="submit" value="CHECKOUT">
+						<span><a href="#">UPDATE BAG</a></span>
+						<span><a href="#">CONTINUE SHOPPING</a></span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div class="footer">
+<div class="footer">
 		<div class="wrap">
 			<div class="footer-top">
 				<div class="footer-left">
@@ -198,8 +205,9 @@
 				<p>	Sign up and receive 10% off
 					your first purchase
 				</p>
-				<form>
-					<input type="text" name="" value="Email address">
+				<form class="form-footer">
+					<input type="text" value="Email address">
+					<input type="submit" class="email-footer">
 				</form>
 				<ul>
 					<li><a href="#"><img src="img/f-icon.png"></a></li>
@@ -221,6 +229,11 @@
 			</div>
 		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/common.js"></script>
+</body>
+</html>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="js/slick.min.js"></script>
 	<script src="js/common.js"></script>

@@ -20,7 +20,10 @@
     font-weight: normal;
     font-style: normal;
 }
-
+.section{
+	position: relative;
+	z-index: 1;
+}
 *{
 	box-sizing: border-box;
 	margin: 0;
@@ -28,8 +31,9 @@
 	outline: none;
 	font-family: Gotham Pro;
 }
-a:hover{
+a:hover, input[type="button"]:hover, input[type="submit"]:hover, button:hover{
 	opacity: 0.5;
+	cursor: pointer;
 }
 textarea{
 	resize: none;
@@ -113,11 +117,13 @@ textarea{
 	display: none;
 }
 .header .drop-down:hover .second-menu{
-	display: block;
+	display: flex;
+	flex-direction: column;
 	position: absolute;
 	top: 15px;
 	width: 100%;
 	z-index: 999;
+	background: #fff;
 }
 .header .drop-down img{
 	position: absolute;
@@ -193,7 +199,7 @@ textarea{
 	margin-bottom: 16px;
 }
 .footer .footer-top .footer-right input[type="text"]{
-	width: 290px;
+	width: 250px;
 	height: 45px;
 	border: 0;
 	outline: none;
@@ -231,6 +237,26 @@ textarea{
 }
 .footer .footer-bottom ul li:first-child{
 	margin-left: 0;
+}
+.footer .footer-top .footer-right input[type="text"]::before{
+	content: '';
+	display: inline-block;
+	height: 12px;
+	width: 7px;
+	background: url(img/arrow.png) #000;
+	position: absolute;
+	right: 0;
+	z-index: 6;
+}
+.footer .email-footer{
+	height: 45px;
+	width: 42px;
+	background: url(img/right-arrow.png) center #fff no-repeat;
+	font-size: 0;
+	border: 0;
+}
+.footer .form-footer{
+	display: flex;
 }
 .slick-track{
 	display: flex;
@@ -683,9 +709,62 @@ input[type="checkbox"]:checked + label:before{
 	display: flex;
 	flex-direction: column;
 	text-align: right;
+	margin-top: 25px;
+	width: 240px;
+}
+.section.bag .stats-all{
+	display: flex;
+	justify-content: flex-end;
+}
+.section.bag .statistics .stats-bottom{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+.section.bag .statistics p, .section.bag .statistics a{
+	font-size: 12px;
+	text-align: center;
+}
+.section.bag .statistics p{
+	margin-top: 35px;
+	margin-bottom: 15px;
+}
+.section.bag .statistics a{
+	color: #000;
+	text-decoration-color: #bfbfbf;
+	width: 210px;
+	text-align: center;
+}
+.section.bag .statistics .stats-bottom span{
+	margin-top: 20px;
 }
 .section.bag .statistics .price{
 	margin-left: 45px;
+}
+.section.bag .statistics input[type="submit"]{
+	height: 35px;
+	line-height: 35px;
+	width: 190px;
+	border: 1px solid #c6c6c6;
+	background: #f3f3f3;
+	text-align: center;
+	cursor: pointer;
+	margin: 0 auto;
+}
+.section.bag .statistics button{
+	line-height: 35px;
+	height: 35px;
+	width: 120px;
+	border: 1px solid #c6c6c6;
+	background: #f3f3f3;
+	font-weight: bold;
+}
+.section.bag .statistics .layer{
+	margin-top: 15px;
+}
+.section.bag .statistics .layer:first-child{
+	margin-top: 0;
 }
 /*gift*/
 .section.gift .gift-content{
@@ -864,6 +943,7 @@ input[type="checkbox"]:checked + label:before{
 .fifty-fifty input{
 	width: 49%;
 }
+
 .section.paypal form input[type="text"]{
 	height: 40px;
 	border: 1px solid #c6c6c6;
@@ -1262,4 +1342,38 @@ input[type="checkbox"]:checked + label:before{
 }
 .section.swimwear .catalog li:nth-child(4n){
 	margin-right: 0;
+}
+/* contact us */
+.contact-us{
+	width: 325px;
+	height: 535px;
+} 
+.contact-us .contact-us-top{
+	height: 45px;
+	line-height: 45px;
+	background: #131313;
+	color: #fff;
+	text-align: center;
+}
+.contact-us input[type="text"]{
+	height: 40px;
+	border: 1px solid #d5d5d5;
+	line-height: 40px;
+}
+.contact-us .contact-content{
+	width: 265px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+.contact-us .contact-bottom{
+	height: 50px;
+	line-height: 50px;
+	background: #fff;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 10px;
+	box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+	position: relative;
+	z-index: 5
 }
