@@ -940,7 +940,7 @@ input[type="checkbox"]:checked + label:before{
 	display: flex;
 	justify-content: space-between;
 }
-.fifty-fifty input{
+.fifty-fifty .input{
 	width: 49%;
 }
 
@@ -950,8 +950,8 @@ input[type="checkbox"]:checked + label:before{
 	border-radius: 5px;
 	line-height: 40px;
 	padding: 0 15px;
-	margin-bottom: 10px;
-	color: #7f7f7f;	
+	color: #222;
+	font-weight: bold;	
 }
 .section.paypal form input[type="text"]:last-child{
 	margin-bottom: 0;
@@ -988,7 +988,7 @@ input[type="checkbox"]:checked + label:before{
 	position: absolute;
 	left: 0;
 }
-.section.paypal .paypal-left label{
+.section.paypal input[type="checkbox"] + label{
 	position: relative;
 	padding-left: 24px;
 	font-size: 12px;
@@ -1198,6 +1198,86 @@ input[type="checkbox"]:checked + label:before{
 	position: absolute;
 	left: 25%;
 	margin-left: -85px;
+}
+.section.paypal .phone::before{
+	content: '?';
+	display: block;
+	position: absolute;
+	height:14px;
+	width: 14px;
+	right: 15px;
+	top: 50%;
+	margin-top: -7px;
+	background: url(img/elips.png) center/contain;
+	text-align: center;
+	line-height: 14px;
+	color: #fff;
+	font-size: 12px;
+	cursor: pointer;
+	font-weight: bold;
+}
+.section.paypal .phone{
+	position: relative;
+}
+.section.paypal .phone .fifty-fifty .input{
+	width: 49%;
+}
+.section.paypal .phone input{
+	width: 100%;
+}
+.section.paypal .input{
+	position: relative;
+	margin-bottom: 10px;
+}
+.section.paypal .input label{
+	position: absolute;
+	height: 100%;
+	line-height: 40px;
+	padding-left: 15px;
+	font-size: 12px;
+	font-weight: bold;
+	left: 0;
+	color: #7f7f7f;
+	transition: all 0.3s linear;
+}
+.section.paypal .input input:focus + label, .section.paypal .input input:not(:placeholder-shown) + label{
+	font-size: 10px;
+	transform: translateY(-13px);
+}
+.section.paypal .input input{
+	width: 100%;
+}
+.section.paypal .select{
+	position: relative;
+	width: 49%;
+	margin-bottom: 10px;
+}
+.section.paypal .select::before{
+	content: '';
+	display: block;
+	position: absolute;
+	background: url(img/bottom-arrow.png) #fff center/contain no-repeat;
+	width: 12px;
+	height: 7px;
+	right: 16px;
+	top: 50%;
+	margin-top: -3px;
+}
+.section.paypal .select select{
+	border: 1px solid #c6c6c6;
+	border-radius: 5px;
+	width: 100%;
+	font-weight: bold;
+	appearance:none;
+	-webkit-appearance: none;
+}
+.section.paypal .select label{
+	position: absolute;
+	font-size: 10px;
+	color: #7f7f7f;
+	font-weight: bold;
+	padding-left: 15px;
+	top: 2px;
 }
 /*paypal-login*/
 .section.paypal .account{
