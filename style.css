@@ -11,12 +11,12 @@
 }
 @font-face {
     font-family: 'Gotham Pro';
-    src: url('GothamPro.eot');
-    src: url('GothamPro.eot?#iefix') format('embedded-opentype'),
-        url('GothamPro.woff2') format('woff2'),
-        url('GothamPro.woff') format('woff'),
-        url('GothamPro.ttf') format('truetype'),
-        url('GothamPro.svg#GothamPro') format('svg');
+    src: url('fonts/GothamPro.eot');
+    src: url('fonts/GothamPro.eot?#iefix') format('embedded-opentype'),
+        url('fonts/GothamPro.woff2') format('woff2'),
+        url('fonts/GothamPro.woff') format('woff'),
+        url('fonts/GothamPro.ttf') format('truetype'),
+        url('fonts/GothamPro.svg#GothamPro') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -39,7 +39,7 @@ textarea{
 	resize: none;
 }
 .wrap{
-	width:1170px;
+	max-width:1170px;
 	margin: 0 auto;
 }
 .way{
@@ -77,9 +77,11 @@ textarea{
 	display: flex;
 	align-content: center;
 	align-items: center;
+	width: 40%;
+	font-size: 12px;
 }
 .header .header-left p{
-	font-size: 12px;
+	margin: 0;
 }
 .header ul{
 	display: flex;
@@ -159,14 +161,12 @@ textarea{
 }
 /*footer*/
 .footer{
-	height: 430px;
 	background: #e8e8e8;
 	position: relative;
 }
 .footer .wrap{
 	padding:65px 0 0 115px;
 	position: relative;
-	height: 100%
 }
 .footer-top,.footer-left{
 	display: flex;
@@ -218,12 +218,10 @@ textarea{
 	margin-right: 20px; 
 }
 .footer .footer-bottom{
-	position: absolute;
-	bottom: 45px;
-	right: 0;
 	text-align: right;
 	display: flex;
 	align-items:center;
+	justify-content: flex-end;
 }
 .footer-bottom p{
 	margin-right: 120px;
@@ -273,8 +271,8 @@ textarea{
 }
 .arrivals-slider .arrivals-slide{
 	margin:0 6px;
-	display: flex;
-	flex-direction: column;
+	/*display: flex;
+	flex-direction: column;*/
 }
 .arrivals-slider .arrivals-slide .arrival-info{
 	display: flex;
@@ -283,7 +281,9 @@ textarea{
 	font-size: 12px
 }
 .arrivals-slider .arrivals-slide img{
-	height: 100%;
+	width: auto;
+	display: block;
+	margin: 0 auto;
 }
 .arrivals-slider .slick-arrow{
 	position: absolute;
@@ -370,24 +370,24 @@ textarea{
 	display: flex;
 	flex-direction:column;
 	flex-wrap: wrap;
-	max-height: 463px;
+	height: 470px;
 	width: 100%;
 	justify-content: flex-start;
 	align-content: flex-start;
 }
 .section.gallery-section .gallery li{
-	height: 227px;
-	width: 226px;
+	width: 20%;
+	padding: 0 5px 9px;
+}
+.section.gallery-section .gallery li img {
+	display: block;
+	width: 100%;
+	height: auto;
 }
 .section.gallery-section .gallery li:first-child{
-	width: 463px;
-	height: 463px;
-}
-.section.gallery-section .gallery li:nth-child(2n){
-	margin-bottom: 9px;
-}
-.section.gallery-section .gallery li:nth-child(2n+1){
-	margin-right: 9px;
+	width: 39.5%;
+	padding-left: 0;
+	padding-right: 4px;
 }
 /*contact*/
 .section.contact{
@@ -501,14 +501,15 @@ textarea{
 }
 /* product*/
 .section.product .product-center{
-	width: 420px;
+	width: calc(100% - 165px);
 	height: 650px;
-	margin-left: 65px;
 }
 .section.product .product-slider{
 	height: 650px;
-	width: 127px;
+	width: 106px;
+    overflow: hidden;
 }
+.section.product .product-center img,
 .section.product .product-slider img{
 	width: 100%;
 	height: auto;
@@ -520,9 +521,9 @@ textarea{
 .section.product .product-left{
 	width: 60%;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 	margin-top: 50px;
-	margin-left: 83px;
+	padding-left: 60px;
 }
 .section.product .product-right{
 	width:35%;
@@ -862,10 +863,13 @@ input[type="checkbox"]:checked + label:before{
 	flex-wrap: wrap;
 }
 .section.wishlist .wishlist-list li{
-	margin-right: 10px;
+	padding:0 5px;
+	width: 25%;
 }
-.section.wishlist .wishlist-list li:nth-child(4n){
-	margin-right: 0;
+.section.wishlist .wishlist-list li img {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
 }
 .section.wishlist .wishlist-list .product-card .product-name{
 	font-size: 12px;
@@ -1337,11 +1341,13 @@ input[type="checkbox"]:checked + label:before{
 .section.swimwear .catalog-menu .min-menu li{
 	margin: 0;
 }
-.section.swimwear li{
-	margin-right: 9px;
+.section.swimwear .catalog li{
+	padding: 0 5px;
+	width: 25%;
 }
-.section.swimwear .catalog li:nth-child(4n){
-	margin-right: 0;
+.section.swimwear .catalog li img {
+	display: block;
+	width: 100%;
 }
 /* contact us */
 .contact-us{
@@ -1376,4 +1382,317 @@ input[type="checkbox"]:checked + label:before{
 	box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
 	position: relative;
 	z-index: 5
+}
+
+.menu-btn {
+	display: none;
+}
+.shadow {
+	background: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 998;
+}
+@media (max-width: 991px) {
+	.footer .wrap,
+	.wrap {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.footer .wrap {
+		padding-top: 35px;
+	}
+	.footer-left,
+	.footer-right {
+		width: 50%;
+	}
+	.footer .wrap .footer-top .footer-left ul:first-child {
+		margin-right: 0;
+	}
+	.footer .wrap .footer-top .footer-left ul {
+		width: 50%;
+	}
+	.section.gallery-section .gallery {
+		flex-direction: initial;
+		height: initial;
+	}
+	.section.gallery-section .gallery li:first-child {
+		width: 100%;
+		height: auto;
+		margin-right: 0;
+		padding: 0 5px;
+	}
+	.section.gallery-section .gallery li {
+		width: 33.33%;
+		height: auto;
+		padding: 0 5px;
+		margin-bottom: 10px;
+	}
+	.section.gallery-section .gallery li img {
+		width: 100%;
+		height: auto;
+	}
+	.section.gallery-section .gallery li:nth-child(2n),
+	.section.gallery-section .gallery li:nth-child(2n+1) {
+		margin-right: initial;
+	}
+	.section.gift .gift-right {
+		width: 48%;
+	}
+	.section.gift .gift-left {
+		width: 48%;
+	}
+	.section.bag .bag-item .left-info, .right-info {
+		width: 50%;
+	}
+	.section.bag .bag-item .right-info .amount {
+		margin: 0 auto;
+	}
+	.section.bag .bag-item .amount input {
+		margin: 0 !important;
+	}
+	.section.bag .bag-top .bag-left-top,
+	.section.bag .bag-top .bag-right-top {
+		width: 50%;
+	}
+	.section.bag .bag-top .bag-right-top {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.section.bag .bag-top .bag-right-top span {
+		display: block;
+	}
+	.section.bag .bag-top .bag-right-top span:last-child {
+		margin: 0;
+	}
+	.section.bag .bag-top .bag-right-top span:nth-child(2) {
+		margin: 0 auto;
+	}
+    .section.product .product-left {
+        padding-left: 0;
+    }
+    .section.product .product-center {
+        width: calc(100% - 125px);
+        height: auto;
+    }
+}
+@media (max-width: 767px) {
+	.section.food .wrap {
+		flex-direction: column;
+	}
+	.section.food .wrap .paragraph {
+		margin-bottom: 15px;
+	}
+	.section.food .wrap img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	.section.about ul {
+		justify-content: flex-start;
+		flex-wrap: wrap;
+	}
+	.section.about ul li {
+		width: 50%;
+		margin-bottom: 15px;
+	}
+	.header .header-left p,
+	.header .header-right p {
+		display: none;
+	}
+	.header img[src="img/logo.png"] {
+		position: relative;
+		top: initial;
+		left: initial;
+		margin: 0 -85px 0 auto;
+	}
+	.header .header-right {
+		position: relative;
+		top: initial;
+		right: initial;
+		width: 50%;
+	}
+	.header .header-left {
+		width: 50%;
+	}
+	.header .header-bottom {
+		position: fixed;
+		width: 300px;
+		right: -300px;
+		top: 0;
+		height: 100%;
+		background: #fff;
+		z-index: 999;
+		transition: all linear 0.2s;
+	}
+	.header .header-bottom.active {
+		right: 0;
+	}
+	.header ul {
+		display: flex;
+		list-style: none;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		height: 100%;
+	}
+	.header .wrap {
+		flex-direction: initial;
+		height: 80px;
+	}
+	.header {
+		height: 80px;
+	}
+	.header .header-right .menu{
+		justify-content: flex-end;
+		height: 100%;
+		margin-top: 0;
+	}
+	.header .header-right .menu-item {
+		width: initial;
+		height: initial;
+	}
+	.header .header-right .menu-item:nth-child(1),
+	.header .header-right .menu-item:nth-child(2),
+	.header .header-right .menu-item:nth-child(3),
+	.header .header-right .menu-item:nth-child(4) {
+		display: none;
+	}
+	.header ul li {
+		margin-bottom: 10px;
+	}
+	.menu-btn {
+		position: relative;
+		height: 21px;
+		width: 30px;
+		display: flex;
+		align-items: center;
+	}
+	.menu-btn span {
+		height: 2px;
+		width: 100%;
+		display: block;
+		background: #000;
+	}
+	.menu-btn:before,
+	.menu-btn:after {
+		position: absolute;
+		left: 0;
+		height: 2px;
+		width: 100%;
+		display: block;
+		content: '';
+		background: #000;
+	}
+	.menu-btn:after {
+		bottom: 0;
+	}
+	.menu-btn:before {
+		top: 0;
+	}
+	.footer-left, .footer-right {
+		width: 100%;
+	}
+	.footer-top {
+		flex-direction: column;
+	}
+	.footer-right {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 15px;
+	}
+	.footer .footer-bottom {
+		flex-direction: column;
+		text-align: center;
+	}
+	.footer-bottom p {
+		margin: 0 0 15px;
+	}
+	.section.swimwear .catalog li{
+		width: 50%;
+	}
+	.section.paypal .paypal-all {
+		flex-direction: column;
+	}
+	.section.paypal .paypal-all .paypal-right {
+		width: 100%;
+		order: 1;
+		margin-bottom: 15px;
+	}
+	.section.paypal .paypal-all .paypal-left {
+		width: 100%;
+		order: 2;
+	}
+	.section.paypal .message-form {
+		margin-top: 20px;
+	}
+	.way {
+		margin-bottom: 20px;
+	}
+	.paypal-head.header .header-left {
+		width: 100%;
+	}
+	.header.paypal-head img[src="img/logo.png"] {
+		position: relative;
+		left: initial;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.section.gift .gift-right {
+		width: 100%;
+	}
+	.section.gift .gift-left {
+		width: 100%;
+	}
+	.section.gift .gift-content {
+		flex-direction: column;
+	}
+	.section.gift .gift-right .gift-top {
+		height: auto;
+		padding: 20px 0;
+	}
+	.section.wishlist .wishlist-list li{
+		width: 50%;
+	}
+	.section.bag .bag-item {
+		flex-direction: column;
+		min-height: 150px;
+		height: auto;
+		padding: 15px 0;
+	}
+	.section.bag .bag-item .left-info, .right-info {
+		width: 100%;
+	}
+	.section.bag .bag-item .left-info {
+		margin-bottom: 15px;
+	}
+	.section.bag .bag-top {
+		display: none;
+	}
+    .section.product .product-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .section.product .product-left {
+        margin-top: 0;
+        width: 100%;
+    }
+    .section.product .product-right {
+        width: 100%;
+    }
+}
+@media (max-width: 479px) {
+	.section.gallery-section .gallery li {
+		width: 50%;
+	}
+	.section.swimwear .catalog li{
+		width: 100%;
+	}
+	.section.wishlist .wishlist-list li{
+		width: 100%;
+	}
 }
