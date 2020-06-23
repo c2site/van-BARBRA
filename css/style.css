@@ -1,22 +1,22 @@
 @font-face {
 	font-family: 'Gotham Pro bold';
-	src: url('fonts/GothamPro-Bold.eot');
-	src: url('fonts/GothamPro-Bold.eot?#iefix') format('embedded-opentype'),
-	url('fonts/GothamPro-Bold.woff2') format('woff2'),
-	url('fonts/GothamPro-Bold.woff') format('woff'),
-	url('fonts/GothamPro-Bold.ttf') format('truetype'),
-	url('fonts/GothamPro-Bold.svg#GothamPro-Bold') format('svg');
+	src: url('../fonts/GothamPro-Bold.eot');
+	src: url('../fonts/GothamPro-Bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/GothamPro-Bold.woff2') format('woff2'),
+	url('../fonts/GothamPro-Bold.woff') format('woff'),
+	url('../fonts/GothamPro-Bold.ttf') format('truetype'),
+	url('../fonts/GothamPro-Bold.svg#GothamPro-Bold') format('svg');
 	font-weight: bold;
 	font-style: normal;
 }
 @font-face {
     font-family: 'Gotham Pro';
-    src: url('fonts/GothamPro.eot');
-    src: url('fonts/GothamPro.eot?#iefix') format('embedded-opentype'),
-        url('fonts/GothamPro.woff2') format('woff2'),
-        url('fonts/GothamPro.woff') format('woff'),
-        url('fonts/GothamPro.ttf') format('truetype'),
-        url('fonts/GothamPro.svg#GothamPro') format('svg');
+    src: url('../fonts/GothamPro.eot');
+    src: url('../fonts/GothamPro.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GothamPro.woff2') format('woff2'),
+        url('../fonts/GothamPro.woff') format('woff'),
+        url('../fonts/GothamPro.ttf') format('truetype'),
+        url('../fonts/GothamPro.svg#GothamPro') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -135,14 +135,17 @@ textarea{
 .header .drop-down-menu{
 	position: relative;
 }
-.header .drop-down:hover .second-menu, .header .second-menu:hover{
+.header .drop-down:hover .second-menu {
 	display: flex;
 	flex-direction: column;
 	position: absolute;
 	top: 15px;
+	left: 0;
 	padding: 10px 5px;
 	z-index: 999;
 	background: #fff;
+	min-width: 100px;
+	width: 100%;
 }
 .header .drop-down img{
 	position: absolute;
@@ -444,7 +447,7 @@ textarea{
 	padding: 0 10px;
 }
 .section.create form input[type="text"]{
-	margin-bottom: 
+	margin-bottom: 0;
 }
 .section.contact form textarea{
 	padding: 10px;
@@ -665,7 +668,7 @@ input[type="checkbox"]{
 	margin-bottom: 10px;
 }
 input[type="checkbox"]:checked + label:before{
-	background-image: url(img/tick.png);
+	background-image: url(../img/tick.png);
 	background-size: contain;
 	background-repeat: no-repeat;
 }
