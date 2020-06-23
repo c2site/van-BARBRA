@@ -98,7 +98,7 @@
 								</div>
 							</div>
 							<div class="input phone">
-								<input id="phone" type="text" placeholder=" ">
+								<input id="phone" type="tell" placeholder=" " data-mask="+7 (000) 000 00 00">
 								<label for="phone">Phone</label>
 							</div>
 							<div class="form-bottom">
@@ -114,7 +114,9 @@
 							<div class="shopping-item">
 								<div class="shopping-list-left">
 									<div class="img">
-										<img src="img/plavki-bikini.jpg" alt="">
+										<a href="#">
+											<img src="img/plavki-bikini.jpg" alt="">
+										</a>
 										<div class="amount">1</div>
 									</div>
 									<div class="item-info"> 
@@ -131,7 +133,9 @@
 							<div class="shopping-item">
 								<div class="shopping-list-left">
 									<div class="img">
-										<img src="img/plavki-bikini.jpg" alt="">
+										<a href="#">
+											<img src="img/plavki-bikini.jpg" alt="">
+										</a>
 										<div class="amount">1</div>
 									</div>
 									<div class="item-info"> 
@@ -148,7 +152,9 @@
 							<div class="shopping-item">
 								<div class="shopping-list-left">
 									<div class="img">
-										<img src="img/plavki-bikini.jpg" alt="">
+										<a href="#">
+											<img src="img/plavki-bikini.jpg" alt="">
+										</a>
 										<div class="amount">1</div>
 									</div>
 									<div class="item-info"> 
@@ -172,16 +178,16 @@
 						<div class="total-left">
 							<div class="layer">
 								<span>Subtotal</span>
-								<span>$165.00</span>
+								<span class="bold">$165.00</span>
 							</div>
 							<div class="layer">
 								<span>Shipping</span>
-								<span>Calculated at next step</span>
+								<span class="grey">Calculated at next step</span>
 							</div>
 							<div class="layer">
-								<span>Total</span>
+								<span class="bold">Total</span>
 								<p>USD 
-									<span> $165.00</span>
+									<span class="bold"> $165.00</span>
 								</p>
 							</div>
 						</div>
@@ -198,6 +204,7 @@
 	</div>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="js/slick.min.js"></script>
+	<script src="js/jquery.mask.min.js"></script>
 	<script src="js/common.js"></script>
 </body>
 </html>

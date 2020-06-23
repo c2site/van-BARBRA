@@ -28,6 +28,12 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+.bold{
+	font-weight: bold;
+}
+.grey{
+	color: #7f7f7f;
+}
 .section{
 	position: relative;
 	z-index: 1;
@@ -121,6 +127,9 @@ textarea{
 	font-weight: bold;
 	text-decoration-color: #bfbfbf;
 }
+.header .header-right .bag{
+	margin-left: 5px;
+}
 .header .header-right p{
 	text-align: right;
 }
@@ -147,15 +156,20 @@ textarea{
 	min-width: 100px;
 	width: 100%;
 }
-.header .drop-down img{
+.header .drop-down:after{
+	content: '';
+	display: block;
 	position: absolute;
-	right: -10px;
-	transform: rotate(270deg);
+	right: -9px;
+	background: url(../img/menu-arrow.png);
+	width: 12px;
+	height: 7px;
 	top: 50%;
-	margin-top: -6px;
+	margin-top: -3px;
 }
 .header .drop-down{
 	position: relative;
+	padding-right: 7px;
 }
 .header .header-right .menu-item{
 	margin-left:18px;
@@ -437,10 +451,10 @@ textarea{
 	display: flex;
 	justify-content: space-between;
 }
-.section.contact form .fir-stage input[type="text"]:nth-child(2), .section.contact form .fir-stage input:first-child{
+.section.contact form .fir-stage input{
 	width: 49%;
 }
-.section.contact form input[type="text"], .section.login form input[type="text"], .section.create form input[type="text"], .section.login .login-input input[type="email"]{
+.section.contact form input, .section.login form input[type="text"], .section.create form input, .section.login .login-input input[type="email"]{
 	height: 30px;
 	line-height: 30px;
 	margin-bottom: 10px;
@@ -454,7 +468,7 @@ textarea{
 	margin-bottom: 20px;
 	height: 175px;
 }
-.section.contact form textarea, .section.contact form input[type="text"]{
+.section.contact form textarea, .section.contact form input{
 	font-size: 12px;
 	border: 1px solid #c6c6c6;
 	color: #7f7f7f;
@@ -510,6 +524,12 @@ textarea{
 	line-height: 20px;
 	padding: 0 5px;
 	font-size: 12px;
+	text-decoration: none;
+	color: #000;
+}
+.section.login .robot a{	
+	text-decoration: none;
+	color: #000;
 }
 .section.login input[type="submit"], .section.create input[type="submit"]{
 	background: #d9d9d9;
@@ -548,6 +568,7 @@ textarea{
 }
 .section.create .create-input input{
 	width: 100%;
+	margin-bottom: 0;
 }
 .section.create .create-input{
 	position: relative;
@@ -629,6 +650,10 @@ span.new-price{
 .section.product .product-top{
 	position: relative;
 }
+.section.product .product-top h3{
+	font-size: 18px;
+	font-weight: bold;
+}
 .section.product .buttons{
 	margin-bottom: 30px;
 }
@@ -662,7 +687,7 @@ input[type="checkbox"]{
 }
 .section.create label{
 	position: relative;
-	padding-left: 20px;
+	padding-left: 25px;
 	font-size: 10px;
 	color: #969696;
 	margin-bottom: 10px;
@@ -778,7 +803,7 @@ input[type="checkbox"]:checked + label:before{
 .section.bag .bag-items li.size select{
 	height: 12px;
 	border: 0;
-	width: 36px;
+	width: 38px;
 	padding: 0;
 	color: #7f7f7f;
 }
@@ -879,6 +904,7 @@ input[type="checkbox"]:checked + label:before{
 	font-weight: bold;
 	text-align: center;
 	font-size: 12px;
+	padding: 0 5px;
 }
 .section.bag .statistics .layer{
 	margin-top: 15px;
@@ -910,9 +936,15 @@ input[type="checkbox"]:checked + label:before{
 .section.gift .gift-left .gift-card{
 	height: 220px;
 	width: 440px;
-	background: url(../img/logo.png) center no-repeat  #abe5fa;
+	background: #abe5fa;
 	border: 1px solid #2e528f;
 	border-radius: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.section.gift .gift-left .gift-card img{
+	width: 50%;
 }
 .section.gift .gift-right .gift-top, .section.product .product-right .product-top{
 	display: flex;
@@ -933,6 +965,7 @@ input[type="checkbox"]:checked + label:before{
 	line-height: 40px;
 	font-size: 12px;
 	padding: 0 15px;
+	width: 100%;
 }
 .section select option{
 	font-size: 150%
@@ -1040,7 +1073,7 @@ input[type="checkbox"]:checked + label:before{
 	width: 100%;
 	background: #fff;
 	position: absolute;
-	bottom: 30px;
+	bottom: 0;
 	display: none;
 	padding-top: 10px;
 	padding-bottom: 25px;
@@ -1048,7 +1081,7 @@ input[type="checkbox"]:checked + label:before{
 .section.wishlist .wishlist-list .product-card{
 	position: relative;
 }
-.section.wishlist .wishlist-list .product-card:hover .select-size{
+.section.wishlist .wishlist-list .product-card:hover .select-size,.section.wishlist .wishlist-list .product-card:hover .add-btn{
 	display: block;
 }
 .section.wishlist .wishlist-list .product-card .select-size h5{
@@ -1056,10 +1089,27 @@ input[type="checkbox"]:checked + label:before{
 	text-align: center;
 	font-weight: normal;
 }
+.section.wishlist .wishlist-list .add-btn{
+	display: none;
+	justify-content: center;
+	padding-top: 40px;
+	position: absolute;
+	bottom: -60px;
+	margin-top: 30px;
+	left: 0%;
+	width: 100%;
+	text-align: center;
+	z-index: 3;
+}
 .section.wishlist .wishlist-list .product-card .add{
 	width: 130px;
 	margin: 0 auto;
-	display: none;
+	height: 40px;
+	background: #000;
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+	border: none;
 }
 .section.wishlist .select-menu select{
 	border: 0;
@@ -1082,7 +1132,7 @@ input[type="checkbox"]:checked + label:before{
 	display: none;
 	cursor: pointer;
 }
-.section.wishlist .wishlist-list .product-card:hover .add, .section.wishlist .product-card:hover .close{
+.section.wishlist .product-card:hover .close{
 	display: block;
 }
 /*paypal*/
@@ -1098,7 +1148,7 @@ input[type="checkbox"]:checked + label:before{
 	width: 49%;
 }
 
-.section.paypal form input[type="text"], .section.paypal form input[type="email"]{
+.section.paypal form input{
 	height: 40px;
 	border: 1px solid #c6c6c6;
 	border-radius: 5px;
@@ -1130,6 +1180,7 @@ input[type="checkbox"]:checked + label:before{
 	background: #d9d9d9;
 	border:1px solid #898989;
 	cursor: pointer;
+	font-size: 12px;
 }
 .section.paypal .paypal-form .form-bottom .return{
 	color: #000;
@@ -1207,9 +1258,19 @@ input[type="checkbox"]:checked + label:before{
 	position: relative;
 }
 .section.paypal .paypal-checkout .paypal-background{
-	padding: 10px 62px;
 	background: #ffc337;
 	border-radius: 5px;
+	height: 35px;
+	min-width: 180px;
+	display: flex;
+	text-align: center;
+}
+.section.paypal .paypal-checkout .paypal-background a{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .section.paypal .paypal-checkout .on-border{
 	font-size: 12px;
@@ -1219,6 +1280,8 @@ input[type="checkbox"]:checked + label:before{
 	padding: 0 6px;
 	left: 50%;
 	margin-left: -50px;
+	font-weight: bold;
+	font-family: 'GothamPro-Bold', sans-serif;
 }
 .section.paypal .paypal-all{
 	display: flex;
@@ -1267,6 +1330,10 @@ input[type="checkbox"]:checked + label:before{
 	display: flex;
 	flex-direction: column;
 	margin-left: 40px;
+}
+.section.paypal .shopping-list .shopping-item .item-info .item-name{
+	font-weight: bold;
+	margin-bottom: 5px;
 }
 .section.paypal .shopping-list .shopping-item .size{
 	font-size: 14px;
@@ -1327,6 +1394,10 @@ input[type="checkbox"]:checked + label:before{
 	padding-top: 20px;
 }
 .section.paypal .total {
+	display: flex;
+	justify-content: space-between;
+}
+.section.paypal .total .layer{
 	display: flex;
 	justify-content: space-between;
 }
@@ -1410,11 +1481,11 @@ input[type="checkbox"]:checked + label:before{
 	display: block;
 	position: absolute;
 	background: url(../img/bottom-arrow.png) #fff center/contain no-repeat;
-	width: 12px;
-	height: 7px;
+	width: 31px;
+	height: 26px;
 	right: 16px;
 	top: 50%;
-	margin-top: -3px;
+	margin-top: -12px;
 }
 .section.paypal .select select{
 	border: 1px solid #c6c6c6;
@@ -1480,6 +1551,7 @@ input[type="checkbox"]:checked + label:before{
 	display: flex;
 	justify-content: space-between;
 	font-size: 12px;
+	margin-top: 5px;
 }
 .section.swimwear .product-card .quick-add{
 	display: none;
@@ -1541,6 +1613,7 @@ input[type="checkbox"]:checked + label:before{
 }
 .section.swimwear .catalog-menu select{
 	padding: 0;
+	width: auto ;
 }
 .section.swimwear .catalog-menu select.thirdly{
 	margin-left: 55px;
@@ -1611,6 +1684,7 @@ input[type="checkbox"]:checked + label:before{
 	border: 1px solid #d5d5d5;
 	line-height: 40px;
 	border-radius: 5px;
+	padding: 0 5px;
 }
 .contact-us .contact-content{
 	width: 265px;
@@ -1651,6 +1725,7 @@ input[type="checkbox"]:checked + label:before{
 	display: flex;
 	align-items: center;
 	padding: 0 5px;
+	text-decoration: none;
 }
 .contact-us .contact-bottom a img{
 	margin-right: 5px;
