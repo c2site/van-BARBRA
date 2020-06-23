@@ -42,6 +42,7 @@ input[type=number] {
 a:hover, input[type="button"]:hover, input[type="submit"]:hover, button:hover{
 	opacity: 0.5;
 	cursor: pointer;
+	transition: all linear 0.1s
 }
 textarea{
 	resize: none;
@@ -134,7 +135,7 @@ textarea{
 .header .drop-down-menu{
 	position: relative;
 }
-.header .drop-down:hover + .second-menu, .header .second-menu:hover, .header .drop-down img:hover{
+.header .drop-down:hover .second-menu, .header .second-menu:hover{
 	display: flex;
 	flex-direction: column;
 	position: absolute;
@@ -161,6 +162,9 @@ textarea{
 	width: 100%;
 	display: block;
 }
+.header .header-right .menu-item.basket a{
+	display: flex;
+}
 .header .header-right .menu-item.price a{
 	font-size: 12px;
 	text-decoration: none;
@@ -172,7 +176,7 @@ textarea{
 	font-size: 10px;
 	color: #a3a3a3;
 }
-.header .header-right .basket-menu a{
+.header .header-right .basket a{
 	font-size: 10px;
 	color: #a3a3a3;
 	text-decoration: none;
@@ -352,6 +356,7 @@ textarea{
 }
 .section.food .wrap div p{
 	text-align: center;
+	font-family: 'GFS Didot', serif;
 }
 .section.food .wrap .paragraph{
 	width: 100%;
@@ -361,6 +366,7 @@ textarea{
 	font-size: 36px;
 	text-align: center;
 	margin-bottom: 60px;
+	font-family: 'GFS Didot', serif;
 }
 .section.about ul{
 	list-style: none;
@@ -372,6 +378,7 @@ textarea{
 	font-size: 20px;
 	font-weight: normal;
 	margin-bottom: 35px;
+	margin-top: 30px;
 }
 .section.about ul p{
 	font-size: 12px;
@@ -917,7 +924,6 @@ input[type="checkbox"]:checked + label:before{
 	font-weight: bold;
 }
 .section select{
-	width: 100%;
 	border: 1px solid #c6c6c6;
 	background: #fff;
 	height: 40px;
@@ -1530,11 +1536,17 @@ input[type="checkbox"]:checked + label:before{
 .section.swimwear .catalog-menu li{
 	position: relative;
 }
-.section.swimwear .catalog-menu select:last-child{
-	margin-left: 65px;
+.section.swimwear .catalog-menu select{
+	padding: 0;
 }
-.section.swimwear .catalog-menu select:nth-child(2){
-	margin-left: 45px;
+.section.swimwear .catalog-menu select.thirdly{
+	margin-left: 55px;
+}
+.section.swimwear .catalog-menu select.second{
+	margin-left: 35px;
+}
+.section.swimwear .catalog-menu select.first{
+	margin-left: 9px;
 }
 .section.swimwear .catalog-menu select img:last-child{
 	position: absolute;
