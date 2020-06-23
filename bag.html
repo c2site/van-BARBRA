@@ -6,7 +6,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/common.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+	<script>
+	$( function() {
+        $( ".number" ).spinner({
+          min: 1
+        });
+      } );
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/slick.css">
+	<link rel="stylesheet" type="text/css" href="css/ui.spinner.css">
 </head>
 <body>
 	<div class="header">
@@ -15,7 +31,9 @@
 				<span class="menu-btn"><span></span></span>
 				<p>Free UAE shipping + Free WORLDWIDE shipping on all orders over $200  
 				</p>
-				<img src="img/logo.png">
+				<a href="#">
+					<img src="img/logo.png">
+				</a>
 			</div>
 			<div class="header-right">
 				<p>
@@ -23,58 +41,69 @@
 				</p>
 				<div class="menu">
 					<div class="menu-item price">
-					<a href="#"></a>
-						USD
+						<a href="#">
+							USD
+						</a>
 					</div>
 					<div class="menu-item">
-					<a href="#"></a>
+					<a href="#">
 						<img src="img/search.png">
+					</a>
 					</div>
 					<div class="menu-item">
-					<a href="#"></a>
+					<a href="#">
 						<img src="img/user.png">
+					</a>
 					</div>
 					<div class="menu-item">
-					<a href="#"></a>
+					<a href="#">
 						<img src="img/heart.png">
+					</a>
 					</div>
 					<div class="menu-item">
-					<a href="#"></a>
+					<a href="#">
 						<img src="img/basket.png">
+					</a>
 					</div>
 					<div class="basket-menu">
-						<span class="bag">MY BAG</span>
-						<span class="items">Item (0)</span>
+						<span class="bag"><a href="#">MY BAG</a></span>
+						<span class="items"><a href="#">Item (0)</a></span>
 					</div>
 				</div>
 			</div>
 			<div class="header-bottom">
-				<ul>
+				<ul class="head-menu">
 					<li><a href="#">NEW</a></li>
-					<li class="drop-down"><img src="img/arrow.png"><a href="#">SWIM</a>
+					<div class="drop-down-menu">
+						<li class="drop-down"><img src="img/arrow.png"><a href="#">SWIM</a>
+						</li>
 						<ul class="second-menu">
 							<li><a href="#">section</a></li>
 							<li><a href="#">section</a></li>
 							<li><a href="#">section</a></li>
 						</ul>
-					</li>
+					</div>
 					<li><a href="#">BEACHWEAR</a></li>
 					<li><a href="#">LOUNCHWEAR</a></li>
 					<li><a href="#">GIFT CARD</a></li>
-					<li class="drop-down"><img src="img/arrow.png"><a href="#" style="color: #ed1e1e">SALE</a>
+					<div class="drop-down-menu">
+						<li class="drop-down"><img src="img/arrow.png"><a href="#" style="color: #ed1e1e">SALE</a>
+						</li>
 						<ul class="second-menu">
 							<li><a href="#">section</a></li>
 							<li><a href="#">section</a></li>
 							<li><a href="#">section</a></li>
 						</ul>
-					</li>
-					<li class="drop-down"><img src="img/arrow.png"><a href="#">CUSTOMER CARE</a>
+					</div>
+					<div class="drop-down-menu">
+						<li class="drop-down"><img src="img/arrow.png"><a href="#">CUSTOMER CARE</a>
+						</li>
 						<ul class="second-menu">
 							<li><a href="#">section</a></li>
 							<li><a href="#">section</a></li>
 							<li><a href="#">section</a></li>
 						</ul>
-					</li>
+					</div>
 				</ul>
 			</div>
 		</div>	
@@ -82,111 +111,105 @@
 	<div class="section bag">
 		<div class="wrap">
 			<h2>Shopping Bag</h2>
-			<div class="bag-list">
-				<div class="bag-top">
-					<div class="bag-left-top">
-						<span>Product</span>
+			<form>
+				<div class="bag-list">
+					<div class="bag-top">
+						<div class="bag-left-top">
+							<span>Product</span>
+						</div>
+						<div class="bag-right-top">
+							<span>Price</span>
+							<span>Quantity</span>
+							<span>Total</span>
+						</div>
 					</div>
-					<div class="bag-right-top">
-						<span>Price</span>
-						<span>Quantity</span>
-						<span>Total</span>
+					<ul class="bag-items">
+						<li>
+							<div class="bag-item">
+								<div class="left-info">
+									<img src="img/plavki-bikini.jpg">
+									<ul class="info-item">
+										<li class="name-item"><a href="#">Covelly Top - Red Rib</a></li>
+										<li class="color"><span>Color: Red Rib</span></li>
+										<li class="size">
+											<span>Size:</span>
+											<select>
+												<option>XS</option>
+												<option>XL</option>
+												<option>S</option>
+												<option>M</option>
+											</select>
+										</li>
+										<li class="remove"><input type="button" value="Remove"></li>
+									</ul>
+								</div>
+								<div class="right-info">
+									<div class="price">
+										<span>$57.60</span>
+									</div>
+									<div class="amount">
+										 <input id="spinner" name="value" type="number" class="number ui-spinner-input" value="1">
+									</div>
+									<div class="total">
+										<span>$57.60</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="bag-item">
+								<div class="left-info">
+									<img src="img/plavki-bikini.jpg">
+									<ul class="info-item">
+										<li class="name-item"><a href="#">Covelly Top - Red Rib</a></li>
+										<li class="color"><span>Color: Red Rib</span></li>
+										<li class="size">
+											<span>Size:</span>
+											<select>
+												<option>XS</option>
+												<option>XL</option>
+												<option>S</option>
+												<option>M</option>
+											</select>
+										</li>
+										<li class="remove"><input type="button" value="Remove"></li>
+									</ul>
+								</div>
+								<div class="right-info">
+									<div class="price">
+										<span>$57.60</span>
+									</div>
+									<div class="amount">
+										 <input id="spinner" name="value" type="number" class="number ui-spinner-input" value="1">
+									</div>
+									<div class="total">
+										<span>$57.60</span>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="stats-all">
+					<div class="statistics">
+						<div class="layer"><span>Subtotal:</span><span class="price">$139.60</span></div>
+						<div class="layer discount">
+							<div class="stat-input">
+								<input type="text" placeholder="Discount Code">
+							</div>
+							<span class="price">$00.00</span>
+						</div>
+						<div class="layer"><span>TOTAL:</span><span class="price">$139.60</span></div>
+						<p>Shipping and Tax calculated at Checkout
+						</p>
+						<div class="stats-bottom">
+							<a href="#" class="check">CHECKOUT</a>
+							<span><a href="#">UPDATE BAG</a></span>
+							<span><a href="#">CONTINUE SHOPPING</a></span>
+						</div>
 					</div>
 				</div>
-				<ul class="bag-items">
-					<li>
-						<div class="bag-item">
-							<div class="left-info">
-								<img src="img/plavki-bikini.jpg">
-								<ul class="info-item">
-									<li class="name-item"><span>Covelly Top - Red Rib</span></li>
-									<li class="color"><span>Color: Red Rib</span></li>
-									<li class="size"><span>Size: VV</span>
-										<ul class="size-min">
-											<li>
-												XS
-											</li>
-											<li>
-												S
-											</li>
-											<li>
-												M
-											</li>
-										</ul>
-									</li>
-									<li class="remove"><span>Remove</span></li>
-								</ul>
-							</div>
-							<div class="right-info">
-								<div class="price">
-									<span>$57.60</span>
-								</div>
-								<div class="amount">
-									 <input id="spinner" name="value">
-								</div>
-								<div class="total">
-									<span>$57.60</span>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="bag-item">
-							<div class="left-info">
-								<img src="img/plavki-bikini.jpg">
-								<ul class="info-item">
-									<li class="name-item"><span>Covelly Top - Red Rib</span></li>
-									<li class="color"><span>Color: Red Rib</span></li>
-									<li class="size"><span>Size: VV</span>
-										<ul class="size-min">
-											<li>
-												XS
-											</li>
-											<li>
-												S
-											</li>
-											<li>
-												M
-											</li>
-										</ul>
-									</li>
-									<li class="remove"><span>Remove</span></li>
-								</ul>
-							</div>
-							<div class="right-info">
-								<div class="price">
-									<span>$57.60</span>
-								</div>
-								<div class="amount">
-									 <input id="spinner" name="value">
-								</div>
-								<div class="total">
-									<span>$57.60</span>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<div class="stats-all">
-				<div class="statistics">
-					<div class="layer"><span>Subtotal:</span><span class="price">$139.60</span></div>
-					<div class="layer">
-						<div class="stat-input">
-							<input type="text" placeholder="Discount Code">
-						</div>
-						<span class="price">$00.00</span>
-					</div>
-					<div class="layer"><span>TOTAL:</span><span class="price">$139.60</span></div>
-					<p>Shipping and Tax calculated at Checkout
-					</p>
-					<div class="stats-bottom">
-						<input type="submit" value="CHECKOUT">
-						<span><a href="#">UPDATE BAG</a></span>
-						<span><a href="#">CONTINUE SHOPPING</a></span>
-					</div>
-				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 <div class="footer">
@@ -239,13 +262,5 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="js/slick.min.js"></script>
-	<script src="js/common.js"></script>
-</body>
-</html>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="js/slick.min.js"></script>
-	<script src="js/common.js"></script>
 </body>
 </html>

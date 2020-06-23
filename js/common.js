@@ -64,5 +64,5 @@ $(document).ready(function () {
 			$('.header .header-bottom').removeClass('active');
 			$('.shadow').remove();
 		}
-	});
+	});    
 });

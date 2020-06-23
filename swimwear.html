@@ -6,7 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/slick.css">
+	<link rel="stylesheet" type="text/css" href="css/ui.spinner.css">
 </head>
 <body>
 	<div class="header">
@@ -15,7 +18,9 @@
 				<span class="menu-btn"><span></span></span>
 				<p>Free UAE shipping + Free WORLDWIDE shipping on all orders over $200  
 				</p>
-				<img src="img/logo.png">
+				<a href="#">
+					<img src="img/logo.png">
+				</a>
 			</div>
 			<div class="header-right">
 				<p>
@@ -23,7 +28,9 @@
 				</p>
 				<div class="menu">
 					<div class="menu-item price">
-						USD
+						<a href="#">
+							USD
+						</a>
 					</div>
 					<div class="menu-item">
 					<a href="#">
@@ -52,75 +59,84 @@
 				</div>
 			</div>
 			<div class="header-bottom">
-				<ul>
+				<ul class="head-menu">
 					<li><a href="#">NEW</a></li>
-					<li class="drop-down"><img src="img/arrow.png"><a href="#">SWIM</a>
+					<div class="drop-down-menu">
+						<li class="drop-down"><img src="img/arrow.png"><a href="#">SWIM</a>
+						</li>
 						<ul class="second-menu">
 							<li><a href="#">section</a></li>
 							<li><a href="#">section</a></li>
 							<li><a href="#">section</a></li>
 						</ul>
-					</li>
+					</div>
 					<li><a href="#">BEACHWEAR</a></li>
 					<li><a href="#">LOUNCHWEAR</a></li>
 					<li><a href="#">GIFT CARD</a></li>
-					<li class="drop-down"><img src="img/arrow.png"><a href="#" style="color: #ed1e1e">SALE</a>
+					<div class="drop-down-menu">
+						<li class="drop-down"><img src="img/arrow.png"><a href="#" style="color: #ed1e1e">SALE</a>
+						</li>
 						<ul class="second-menu">
 							<li><a href="#">section</a></li>
 							<li><a href="#">section</a></li>
 							<li><a href="#">section</a></li>
 						</ul>
-					</li>
-					<li class="drop-down"><img src="img/arrow.png"><a href="#">CUSTOMER CARE</a>
+					</div>
+					<div class="drop-down-menu">
+						<li class="drop-down"><img src="img/arrow.png"><a href="#">CUSTOMER CARE</a>
+						</li>
 						<ul class="second-menu">
 							<li><a href="#">section</a></li>
 							<li><a href="#">section</a></li>
 							<li><a href="#">section</a></li>
 						</ul>
-					</li>
+					</div>
 				</ul>
 			</div>
 		</div>	
 	</div>
 	<div class="section swimwear">
 		<div class="wrap">
-			<div class="way">Home/Swim/All</div>
-			<h2>swimwear</h2>
+			<div class="way"><a href="#">Home</a>/<a href="#">Swim</a>/<a href="#">All</a></div>
+			<h1>swimwear</h1>
 			<div class="all-catalog">
 				<ul class="catalog-menu">
-					<li class="fir"><img src="img/settings.png">color<img src="img/left-arrow.png">
-						<ul class="min-menu">
-							<li>1</li>
-							<li>2</li>
-							<li>3</li>
-						</ul>
+					<li class="fir"><img src="img/settings.png">
+						<select>
+							<option>color</option>
+							<option>red</option>
+							<option>green</option>
+						</select>
 					</li>
-					<li class="fir">size<img src="img/left-arrow.png">
-						<ul class="min-menu">
-							<li>1</li>
-							<li>2</li>
-							<li>3</li>
-						</ul>
+					<li class="fir">
+						<select>
+							<option>size</option>
+							<option>XS</option>
+							<option>XL</option>
+						</select>
+						<img src="img/left-arrow.png">
 					</li>
-					<li class="fir">featured<img src="img/left-arrow.png">
-						<ul class="min-menu">
-							<li>1</li>
-							<li>2</li>
-							<li>3</li>
-						</ul>
+					<li class="fir">
+						<select>
+							<option>featured</option>
+							<option>price</option>
+						</select>
+						<img src="img/left-arrow.png">
 					</li>
 				</ul>
 				<ul class="catalog">
 					<li> 
 						<div class="product-card sale">
-							<div class="heart">
+							<a class="heart">
 								<img src="img/heart.png">
-							</div>
+							</a>
 							<div class="sale">
 								<img src="img/sale.png">
 							</div>
 							<div class="image">
-								<img src="img/wishlist-item.png">
+								<a href="#">
+									<img src="img/wishlist-item.png">
+								</a>	
 								<div class="quick-add">
 									<div>
 										<span>quick add</span>
@@ -138,7 +154,7 @@
 								</div>
 							</div>
 							<div class="product-info">
-								<div class="product-name">cole top</div>
+								<a class="product-name">cole top</a>
 								<div class="price">
 									<span class="old-price">$140 USD</span>
 									<span class="discount">30% Off</span>
@@ -149,11 +165,13 @@
 					</li>
 					<li> 
 						<div class="product-card">
-							<div class="heart">
+							<a class="heart">
 								<img src="img/heart.png">
-							</div>
+							</a>
 							<div class="image">
-								<img src="img/wishlist-item.png">
+								<a href="#">
+									<img src="img/wishlist-item.png">
+								</a>	
 								<div class="quick-add">
 									<div>
 										<span>quick add</span>
@@ -171,7 +189,7 @@
 								</div>
 							</div>
 							<div class="product-info">
-								<div class="product-name">cole top</div>
+								<a class="product-name">cole top</a>
 								<div class="price">
 									<span class="old-price">$140 USD</span>
 									<span class="discount">30% Off</span>
@@ -182,11 +200,13 @@
 					</li>
 					<li> 
 						<div class="product-card">
-							<div class="heart">
+							<a class="heart">
 								<img src="img/heart.png">
-							</div>
+							</a>
 							<div class="image">
-								<img src="img/wishlist-item.png">
+								<a href="#">
+									<img src="img/wishlist-item.png">
+								</a>	
 								<div class="quick-add">
 									<div>
 										<span>quick add</span>
@@ -204,7 +224,7 @@
 								</div>
 							</div>
 							<div class="product-info">
-								<div class="product-name">cole top</div>
+								<a class="product-name">cole top</a>
 								<div class="price">
 									<span class="old-price">$140 USD</span>
 									<span class="discount">30% Off</span>
@@ -215,11 +235,13 @@
 					</li>
 					<li> 
 						<div class="product-card">
-							<div class="heart">
+							<a class="heart">
 								<img src="img/heart.png">
-							</div>
+							</a>
 							<div class="image">
-								<img src="img/wishlist-item.png">
+								<a href="#">
+									<img src="img/wishlist-item.png">
+								</a>	
 								<div class="quick-add">
 									<div>
 										<span>quick add</span>
@@ -237,7 +259,7 @@
 								</div>
 							</div>
 							<div class="product-info">
-								<div class="product-name">cole top</div>
+								<a class="product-name">cole top</a>
 								<div class="price">
 									<span class="old-price">$140 USD</span>
 									<span class="discount">30% Off</span>
