@@ -425,7 +425,7 @@ textarea{
 	padding: 0 10px;
 }
 .section.create form input[type="text"]{
-	margin-bottom: 
+	margin-bottom: 0;
 }
 .section.contact form textarea{
 	padding: 10px;
